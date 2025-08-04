@@ -1,119 +1,59 @@
-# python-project-
+def list_operations():
+    print("----- LIST OPERATORS & METHODS DEMO -----\n")
 
-i  am going to do the python project
-import os
+    # Create sample lists
+    list1 = [1, 2, 3]
+    list2 = [4, 5, 6]
+    print(f"List 1: {list1}")
+    print(f"List 2: {list2}\n")
 
-import shutil
+    # Concatenation (+)
+    combined = list1 + list2
+    print(f"Concatenation (list1 + list2): {combined}")
 
+    # Repetition (*)
+    repeated = list1 * 2
+    print(f"Repetition (list1 * 2): {repeated}")
 
+    # Membership (in)
+    print(f"Is 2 in list1? {'Yes' if 2 in list1 else 'No'}")
 
-def create\_file(filename, content=""):
+    # Length
+    print(f"Length of list2: {len(list2)}")
 
-&nbsp;   with open(filename, 'w') as f:
+    # Indexing
+    print(f"First item of combined list: {combined[0]}")
 
-&nbsp;       f.write(content)
+    # Slicing
+    print(f"Slicing combined[2:5]: {combined[2:5]}\n")
 
-&nbsp;   print(f"Created file: {filename}")
+    # Append
+    combined.append(7)
+    print(f"After append(7): {combined}")
 
+    # Insert
+    combined.insert(2, 99)
+    print(f"After insert(2, 99): {combined}")
 
+    # Remove
+    combined.remove(99)
+    print(f"After remove(99): {combined}")
 
-def read\_file(filename):
+    # Pop
+    popped = combined.pop()
+    print(f"After pop(): {combined} (Popped: {popped})")
 
-&nbsp;   if os.path.exists(filename):
+    # Sort
+    combined.sort()
+    print(f"After sort(): {combined}")
 
-&nbsp;       with open(filename, 'r') as f:
+    # Reverse
+    combined.reverse()
+    print(f"After reverse(): {combined}")
 
-&nbsp;           print(f"\\nContents of {filename}:\\n{'-'\*40}")
+    # Clear
+    combined.clear()
+    print(f"After clear(): {combined} (Empty list)")
 
-&nbsp;           print(f.read())
-
-&nbsp;   else:
-
-&nbsp;       print(f"File '{filename}' does not exist.")
-
-
-
-def append\_to\_file(filename, content):
-
-&nbsp;   if os.path.exists(filename):
-
-&nbsp;       with open(filename, 'a') as f:
-
-&nbsp;           f.write(content)
-
-&nbsp;       print(f"Appended to file: {filename}")
-
-&nbsp;   else:
-
-&nbsp;       print(f"File '{filename}' does not exist.")
-
-
-
-def rename\_file(old\_name, new\_name):
-
-&nbsp;   if os.path.exists(old\_name):
-
-&nbsp;       os.rename(old\_name, new\_name)
-
-&nbsp;       print(f"Renamed file from {old\_name} to {new\_name}")
-
-&nbsp;   else:
-
-&nbsp;       print(f"File '{old\_name}' does not exist.")
-
-
-
-def delete\_file(filename):
-
-&nbsp;   if os.path.exists(filename):
-
-&nbsp;       os.remove(filename)
-
-&nbsp;       print(f"Deleted file: {filename}")
-
-&nbsp;   else:
-
-&nbsp;       print(f"File '{filename}' does not exist.")
-
-
-
-def list\_files(directory='.'):
-
-&nbsp;   print(f"\\nFiles in directory '{os.path.abspath(directory)}':")
-
-&nbsp;   for item in os.listdir(directory):
-
-&nbsp;       if os.path.isfile(os.path.join(directory, item)):
-
-&nbsp;           print(f" - {item}")
-
-
-
-\# --- Sample Usage ---
-
-if \_\_name\_\_ == "\_\_main\_\_":
-
-&nbsp;   file\_name = "sample.txt"
-
-&nbsp;   new\_file\_name = "renamed\_sample.txt"
-
-
-
-&nbsp;   create\_file(file\_name, "Hello, this is a test file.\\n")
-
-&nbsp;   read\_file(file\_name)
-
-&nbsp;   append\_to\_file(file\_name, "Adding more content.\\n")
-
-&nbsp;   read\_file(file\_name)
-
-&nbsp;   rename\_file(file\_name, new\_file\_name)
-
-&nbsp;   list\_files()
-
-&nbsp;   delete\_file(new\_file\_name)
-
-&nbsp;   list\_files()
-
-
-
+if __name__ == "__main__":
+    list_operations()
